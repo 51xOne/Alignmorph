@@ -2,7 +2,8 @@
 
 `python scripts/visualize_warping.py --model models/sd21_768 --ids car_01 --output outputs/warping`
 
-Each pair produces an HTML page, seven figures, `metadata.json`, and `tensors.pt`.
+Each pair produces an HTML page, visualization figures, `metadata.json`, and
+`tensors.pt`.
 The figures show transport before diffusion refinement.
 
 | Figure | Contents |
@@ -13,7 +14,6 @@ The figures show transport before diffusion refinement.
 | `path.png` | Each frame's draft and its two actual Slerp operands |
 | `midpoint.png` | Source-chart blend, target-chart blend, transported target blend, and final midpoint |
 | `reliability.png` | The reliability used for each direction; black is zero, white is one |
-| `confidence_gates.png` | Bidirectional confidence and the spatial gates for aligned K/V |
 
 The transport operator is
 
@@ -72,8 +72,3 @@ These maps act on latent grids. Attention K/V are obtained from original and ali
 endpoint reference states. The visualizer does not resample projected Q/K/V.
 
 Custom pairs use the same `--pairs` and `--correspondence` arguments as `run.py`.
-
-The attention gates use the full reference geometry, independent of the
-`--strength` display override. The raw
-`aligned_reference_weight` is 0.25 times the per-frame gate, with exact zeros at
-the endpoints.

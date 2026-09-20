@@ -2,9 +2,9 @@
 
 Official implementation of **AlignMorph**.
 
-Training-free image morphing with semantic correspondence, multiband latent
-transport, and confidence-gated endpoint attention. Given two images and their
-captions, AlignMorph generates a sequence of seven transition frames.
+Training-free image morphing with semantic correspondence and multiband latent
+transport. Given two images and their captions, AlignMorph generates a sequence
+of seven transition frames.
 
 
 ## Installation
@@ -53,8 +53,7 @@ python scripts/visualize_warping.py --model models/sd21_768 \
 ```
 
 Open `outputs/warping/index.html` to view the full latent warp, multiband warp,
-low-frequency reconstructions, high-frequency terms, draft operands, midpoint,
-and confidence gates.
+low-frequency reconstructions, high-frequency terms, draft operands, and midpoint.
 This command uses the VAE without diffusion denoising. It also saves the raw
 tensors for further analysis.
 

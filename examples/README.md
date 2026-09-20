@@ -36,9 +36,6 @@ Seed 42 is set once at startup, following the baseline's sequential sampling.
 Changing the input manifest changes subsequent VAE samples. CUDA backend numerics
 can also differ across runs or hardware.
 
-The aligned reference contribution is capped at 0.25 and modulated by spatial
-confidence.
-
 Warping visualization is described in [the visualization guide](../docs/warping.md).
 The saved results are illustrative examples, not a general-purpose benchmark.
 
