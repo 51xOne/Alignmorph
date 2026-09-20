@@ -95,6 +95,11 @@ The [example guide](examples/README.md) includes commands for rerunning both met
 
 ## All 21 pairs
 
+These 21 pairs feature semantically corresponding subjects, including cars,
+motorcycles, and dogs, with large spatial displacements and differences in pose
+or layout. They illustrate morphing between images whose corresponding semantic
+parts occupy substantially different positions.
+
 The [full manifest](examples/pairs21.jsonl) records the source image, target image,
 caption and pair ID for every pair, in the original evaluation order. Images are
 stored once in `examples/images`; different pairs can reuse an endpoint.
