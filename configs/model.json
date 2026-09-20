@@ -1,0 +1,57 @@
+{
+  "description": "Pinned SD2.1 checkpoint shared by official FreeMorph and the bundled AlignMorph examples.",
+  "files": {
+    "scheduler/scheduler_config.json": "4cd9b9597ca64549df35016ca02bd3450ecbac70ccd8b0465b018be4ba54fe4b",
+    "unet/config.json": "dc987e214928b191cb832df4e19c376e862af1e4c4a5f36aac054a53ee251ccf",
+    "unet/diffusion_pytorch_model.fp16.safetensors": "8a3a4d7978884c5e4ef00b62641b1b544b257be2f6715d984188610ad6475ad2",
+    "vae/config.json": "2260079ec0f32ff64e2f3d712b40bb28696633d02c38c8b4662d389595ad20ae",
+    "vae/diffusion_pytorch_model.safetensors": "a1d993488569e928462932c8c38a0760b874d166399b14414135bd9c42df5815",
+    "text_encoder/config.json": "98dea0e667aeb7f60b13bfe209a4acb059437b2c879b7af29035a8afc384416f",
+    "text_encoder/model.safetensors": "cce6febb0b6d876ee5eb24af35e27e764eb4f9b1d0b7c026c8c3333d4cfc916c",
+    "tokenizer/tokenizer_config.json": "28c75888dba91a1a866d953ed7f4f3d5c850c4322b675aed0065da62ee0a8c9f",
+    "tokenizer/special_tokens_map.json": "a83f5831a70d1d21c057186d35aaa504894103d24ee905baa99bc7e83ceb70ee",
+    "tokenizer/vocab.json": "fd67774a869730a6b27bf53d3e434e72054f2a825873c7af3bece183bb1f791e",
+    "tokenizer/merges.txt": "0bc7695944744789d6fd6d0ab754bcbbb9e36f1c182df0a006d619ce70a1e052"
+  },
+  "aliases": {
+    "unet/diffusion_pytorch_model.safetensors": "unet/diffusion_pytorch_model.fp16.safetensors"
+  },
+  "sources": {
+    "scheduler/scheduler_config.json": {
+      "bundled": "configs/checkpoint_layout/scheduler/scheduler_config.json"
+    },
+    "unet/config.json": {
+      "bundled": "configs/checkpoint_layout/unet/config.json"
+    },
+    "unet/diffusion_pytorch_model.fp16.safetensors": {
+      "repo_id": "sd2-community/stable-diffusion-2-1",
+      "revision": "bb2154823665391b4fb29b0b9cf82a198964ee05"
+    },
+    "vae/config.json": {
+      "bundled": "configs/checkpoint_layout/vae/config.json"
+    },
+    "vae/diffusion_pytorch_model.safetensors": {
+      "repo_id": "sd2-community/stable-diffusion-2-1-base",
+      "revision": "4e63672c03103b6c636b8fb4119ba982469b2955"
+    },
+    "text_encoder/config.json": {
+      "bundled": "configs/checkpoint_layout/text_encoder/config.json"
+    },
+    "text_encoder/model.safetensors": {
+      "repo_id": "sd2-community/stable-diffusion-2-1-base",
+      "revision": "4e63672c03103b6c636b8fb4119ba982469b2955"
+    },
+    "tokenizer/tokenizer_config.json": {
+      "bundled": "configs/checkpoint_layout/tokenizer/tokenizer_config.json"
+    },
+    "tokenizer/special_tokens_map.json": {
+      "bundled": "configs/checkpoint_layout/tokenizer/special_tokens_map.json"
+    },
+    "tokenizer/vocab.json": {
+      "bundled": "configs/checkpoint_layout/tokenizer/vocab.json"
+    },
+    "tokenizer/merges.txt": {
+      "bundled": "configs/checkpoint_layout/tokenizer/merges.txt"
+    }
+  }
+}

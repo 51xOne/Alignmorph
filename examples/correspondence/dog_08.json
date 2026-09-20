@@ -1,0 +1,10 @@
+{
+  "pair": "dog_08",
+  "npz_sha256": "fddcee19a8cedce1ddd0c6784ddbbe4e6f47c1b6f0d29b57324fdf474f9c0c9a",
+  "input_sha256": [
+    "1e5f3bebbb1c4d8573098208056f948452c2bfed71f8b325e266602ddf826ae2",
+    "e03742e9fea7401bb336c9e9d6dfcb8d573ae0322dc594aac8591fffd3db8524"
+  ],
+  "coordinate_convention": "pixel pullback maps; source_to_target samples target in source coordinates",
+  "feature_recipe": "normalized_model_grid"
+}

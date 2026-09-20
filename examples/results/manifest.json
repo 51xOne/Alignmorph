@@ -1,0 +1,29 @@
+[
+  {
+    "pair": "car_01",
+    "freemorph_output_sha256": "f54712614ac3290edd4defa7065c0b388b7cdb24ffeb6e5ad2d9de9f02016343",
+    "alignmorph_output_sha256": "747e1ba3fea2d0caa08c1de75aecb8592c29892e72cddd04af0b361fb8fe0965",
+    "preview_sha256": "f7d30016bf4e1e9f4455c291cf89b00226434182e6bd6035270c8229d394129e",
+    "seed": 42,
+    "sampling_manifest": "examples/pairs21.jsonl",
+    "aligned_reference_max_weight": 0.25
+  },
+  {
+    "pair": "dog_01",
+    "freemorph_output_sha256": "0d3fc656c81a2ffc42478e4f8298d1dd8b00bd59b2ab2ccd8cf87e3d668bb379",
+    "alignmorph_output_sha256": "cee73cb72657509c72c5609b8673e8fba1f74c316c7cebb24cff55f9bf205c86",
+    "preview_sha256": "e8ef139a9a0291144cb27ed49b316117128468dc8e768a79929e576ea05c8dff",
+    "seed": 42,
+    "sampling_manifest": "examples/pairs21.jsonl",
+    "aligned_reference_max_weight": 0.25
+  },
+  {
+    "pair": "dog_08",
+    "freemorph_output_sha256": "88ae29c03c7bdb854f6e219a159d15619900a5fff6fe7d43c50c58a38a492831",
+    "alignmorph_output_sha256": "991d418f4d10a1d5f21343a8262264871695ea4c5b0d1c0d803c06e11fcc51b3",
+    "preview_sha256": "9752e2b8eb6e47b62dde80ecf052cda363d7de33c37ceab9fac1bac1b6988ebf",
+    "seed": 42,
+    "sampling_manifest": "examples/pairs21.jsonl",
+    "aligned_reference_max_weight": 0.25
+  }
+]

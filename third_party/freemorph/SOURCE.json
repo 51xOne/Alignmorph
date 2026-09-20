@@ -1,0 +1,10 @@
+{
+  "revision": "b7b7068291c6654232f8c8959e22214e311ede69",
+  "files": {
+    "aid_attention.py": "a8e3ea0d1b8d87dd1685f02693d1026a4c080645a2822168ffa12e80642c8708",
+    "aid_utils.py": "fe21c9169fcf7afbb935e155d21f47e0565eb517d7961327eb714e0c146bf2b0",
+    "freemorph.py": "71560bf1c1ab0bf74bde3ae4328eb80a30ed7adb6316cd19722c15726220b7b4",
+    "requirements.txt": "5846528ef4c8727ebdc84e0f43a7c26196b3714256cc62226506bacbcdb1c260"
+  },
+  "scope": "Unmodified inference source subset; website assets and upstream example data omitted."
+}

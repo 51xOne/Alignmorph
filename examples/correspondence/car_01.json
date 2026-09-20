@@ -1,0 +1,10 @@
+{
+  "pair": "car_01",
+  "npz_sha256": "66e050a40502bc7177f712e0e8d893c487fb622cc008515dd1b0b1205e23aae8",
+  "input_sha256": [
+    "5db10a1ceafa9df9f74820f20032f2df79ef7387fb83d2ea36ed2a239799bb16",
+    "c83400b78addfa4a2128865ff579d3421001e53c8943c30632e48d005aedd5e7"
+  ],
+  "coordinate_convention": "pixel pullback maps; source_to_target samples target in source coordinates",
+  "feature_recipe": "normalized_model_grid"
+}

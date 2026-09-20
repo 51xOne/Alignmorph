@@ -1,0 +1,10 @@
+torch==2.5.1
+torchvision==0.20.1
+numpy==1.23.5
+Pillow==9.5.0
+scipy==1.15.2
+timm==0.6.11
+huggingface-hub==0.36.0
+tqdm==4.66.6
+setuptools==80.9.0
+ninja==1.11.1.4

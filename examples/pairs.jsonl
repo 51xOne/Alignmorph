@@ -1,0 +1,3 @@
+{"exp_id": "car_01", "image_paths": ["images/car1_1.png", "images/car2_0.png"], "prompts": ["Blue sports car, speeding, blurred background, driver's side, road", "Sleek, high-performance, aerodynamic, luxury sports car, speeding on a track."]}
+{"exp_id": "dog_01", "image_paths": ["images/dog_0.png", "images/dog2_1.png"], "prompts": ["Large brown dog, tongue out, sitting on rocks, looking at camera, overcast sky.", "Cute dog, happy expression, tongue out, sitting on ground, blurred background."]}
+{"exp_id": "dog_08", "image_paths": ["images/dog2_0.png", "images/dog2_1.png"], "prompts": ["Happy dog, green grass, brown and white fur, wagging tail, outdoor setting", "Cute dog, happy expression, tongue out, sitting on ground, blurred background."]}
