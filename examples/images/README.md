@@ -1,6 +1,9 @@
 # Input images and pair index
 
-All 21 pairs are listed below. The 27 unique images are stored once in this
+These 21 pairs contain semantically corresponding cars, motorcycles, and dogs
+with large spatial displacements and differences in pose or layout.
+
+The 27 unique images are stored once in this
 folder; endpoints reused by multiple pairs have the same filename and contents.
 The [full manifest](../pairs21.jsonl) also contains both captions and preserves
 pair order. The [quick-start manifest](../pairs.jsonl) selects the three pairs

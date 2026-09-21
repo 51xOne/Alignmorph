@@ -3,7 +3,7 @@
 AlignMorph builds on [FreeMorph](https://github.com/yukangcao/FreeMorph) by
 Yukang Cao, Chenyang Si, Jinghao Wang, and Ziwei Liu. The official source
 included in `third_party/freemorph` is pinned to commit
-`b7b7068291c6654232f8c8959e22214e311ede69`; file hashes are listed in `SOURCE.json`.
+`b7b7068291c6654232f8c8959e22214e311ede69`; file hashes are listed in [SOURCE.json](third_party/freemorph/SOURCE.json).
 The imported snapshot contains no software license. No license to that
 third-party code is granted by this repository.
 

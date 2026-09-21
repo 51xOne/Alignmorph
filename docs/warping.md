@@ -1,10 +1,16 @@
 # Warping visualization
 
-`python scripts/visualize_warping.py --model models/sd21_768 --ids car_01 --output outputs/warping`
+Run from the repository root in the `alignmorph` environment:
+
+```bash
+python scripts/visualize_warping.py --model models/sd21_768 \
+  --ids car_01 dog_01 dog_08 --output outputs/warping
+```
 
 Each pair produces an HTML page, visualization figures, `metadata.json`, and
 `tensors.pt`.
-The figures show transport before diffusion refinement.
+Open `outputs/warping/index.html` to browse the results. The main figures below
+show transport before diffusion refinement.
 
 | Figure | Contents |
 | --- | --- |
@@ -40,6 +46,21 @@ exact sampled endpoints from a generation run. Input and correspondence hashes
 are checked before those tensors are used. The metadata records whether the
 reconstructed draft exactly matches the saved draft.
 
+## Use sampled latents
+
+To visualize the exact endpoints used by a generation run:
+
+```bash
+python run.py --pairs examples/pairs21.jsonl \
+  --correspondence examples/correspondence --model models/sd21_768 \
+  --ids car_01 --save-latents --output outputs/morph
+python scripts/visualize_warping.py --model models/sd21_768 \
+  --ids car_01 --latents-dir outputs/morph --output outputs/warp_exact
+```
+
+Choose new output directories for subsequent runs. For custom pairs, pass the
+same `--pairs` and `--correspondence` to both commands.
+
 ## Draft and midpoint
 
 The first three frames use source coordinates and the last three use target
@@ -68,7 +89,7 @@ path = build_draft_path(source_latent, target_latent, correspondence)
 
 `source_to_target` is a pullback map that samples target content in source
 coordinates; use `target_to_source` for source content in target coordinates.
-These maps act on latent grids. Attention K/V are obtained from original and aligned
-endpoint reference states. The visualizer does not resample projected Q/K/V.
+These maps act on latent grids. The visualizer shows transport before diffusion
+and does not resample projected attention tensors.
 
 Custom pairs use the same `--pairs` and `--correspondence` arguments as `run.py`.
