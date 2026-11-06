@@ -21,6 +21,10 @@ def main():
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
+        "--reference-mode", choices=("shared", "legacy"), default="shared",
+        help="Share reference computation (default), or use the original execution",
+    )
+    parser.add_argument(
         "--check", action="store_true", help="Check inputs without loading a model"
     )
     parser.add_argument(
@@ -38,7 +42,9 @@ def main():
     os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
     from alignmorph.pipeline import AlignMorphPipeline
 
-    pipeline = AlignMorphPipeline(args.model, args.device, args.seed)
+    pipeline = AlignMorphPipeline(
+        args.model, args.device, args.seed, reference_mode=args.reference_mode
+    )
     args.output.mkdir(parents=True, exist_ok=True)
 
     def generate(pair):
@@ -53,6 +59,7 @@ def main():
             correspondence,
             dict(
                 method="AlignMorph",
+                reference_execution=args.reference_mode,
                 seed=args.seed,
                 model=args.model,
                 frames=7,

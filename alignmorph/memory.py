@@ -137,11 +137,16 @@ def denoise_mixed(
                 )
             else:
                 module.set_processor(cross)
-        conditional = pipe.unet(latent, timestep, encoder_hidden_states=text).sample
-        original_bank.memory.clear()
-        aligned_bank.memory.clear()
-        for _, module in attention_modules(pipe.unet):
-            module.set_processor(AttnProcessor2_0())
+        try:
+            conditional = pipe.unet(latent, timestep, encoder_hidden_states=text).sample
+        finally:
+            # Release K/V and restore vanilla attention even if inference fails.
+            original_bank.memory.clear()
+            aligned_bank.memory.clear()
+            if hasattr(original_bank, "pool"):
+                original_bank.pool.clear()
+            for _, module in attention_modules(pipe.unet):
+                module.set_processor(AttnProcessor2_0())
         unconditional = pipe.unet(
             latent, timestep, encoder_hidden_states=empty_text
         ).sample

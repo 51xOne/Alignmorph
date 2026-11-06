@@ -41,12 +41,16 @@ from .refinement import (
 from .transport import build_draft_path, compensate_latent_detail
 from .io import sha256
 from .memory import build_reference_inputs, denoise_mixed, MAX_ALIGNED_WEIGHT
+from .shared_references import prepare_shared_references
 
 
 class AlignMorphPipeline:
     """Generate a bi-phase morph with a reduced-displacement midpoint."""
 
-    def __init__(self, model, device="cuda", seed=42):
+    def __init__(self, model, device="cuda", seed=42, reference_mode="shared"):
+        if reference_mode not in ("legacy", "shared"):
+            raise ValueError("reference_mode must be 'shared' or 'legacy'")
+        self.reference_mode = reference_mode
         self.device = torch.device(device)
         if self.device.type != "cuda":
             raise ValueError("Generation requires a CUDA device")
@@ -203,12 +207,19 @@ class AlignMorphPipeline:
         empty = linear_interpolation(*empty_texts, self.frames).squeeze(0)
 
         forward_times, inverse_times = self.diffusion_timesteps()
-        references = self.prepare_references(collector.original, texts, forward_times)
+        if self.reference_mode == "legacy":
+            references = self.prepare_references(collector.original, texts, forward_times)
         inverted = self.invert_draft(path.latents.clone(), text, inverse_times)
         noisy = self.inject_noise(inverted, self.shared_noise)
-        aligned_references = self.prepare_references(
-            collector.aligned, texts, forward_times
-        )
+        if self.reference_mode == "legacy":
+            aligned_references = self.prepare_references(
+                collector.aligned, texts, forward_times
+            )
+        else:
+            references, aligned_references = prepare_shared_references(
+                self.unet, collector, texts, self.frames,
+                self.scheduler, forward_times.flip(0)
+            )
         refined, gate_means = self.denoise(
             noisy,
             text,
@@ -235,6 +246,7 @@ class AlignMorphPipeline:
             )
 
         diagnostics = dict(
+            reference_execution=self.reference_mode,
             pair=pair["exp_id"],
             chart_path=path.diagnostics,
             midpoint_displacement=0.75,
